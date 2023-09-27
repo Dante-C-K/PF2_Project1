@@ -29,9 +29,9 @@ int main()
 
 
     BestSellerList bestSellerList;
-    Testing = new BestSellerNode(new BestSellerNode(2019, "01/05/2019", 1, 9780735219090, "WHERE THE CRAWDADS SING", "Delia Owens", "Putnam", 26, 0));
+    //Testing = new BestSellerNode(new BestSellerNode(2019, "01/05/2019", 1, 9780735219090, "WHERE THE CRAWDADS SING", "Delia Owens", "Putnam", 26, 0));
 
-    bestSellerList.InsertHead(new BestSellerNode(new BestSellerNode(2019, "01/05/2019", 1, 9780735219090, "WHERE THE CRAWDADS SING", "Delia Owens", "Putnam", 26, 0)));
+    //bestSellerList.InsertHead(new BestSellerNode(new BestSellerNode(2019, "01/05/2019", 1, 9780735219090, "WHERE THE CRAWDADS SING", "Delia Owens", "Putnam", 26, 0)));
     return 0;
 
 }
