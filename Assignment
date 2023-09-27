@@ -1,0 +1,106 @@
+CSCE 2014 – Programming Project 2
+Due Date – Friday – 09/15/2023
+
+1. Problem Statement:
+
+The goal of this programming assignment is to give students experience implementing and using a linked list data structure to store and manipulate information. We will be using the New York Times best seller lists again, but this time we will use linked lists to help us answer questions about the most popular authors and book titles in different time periods. For example, which book was on the NYT best seller list for the most weeks between 2005 and 2015, or which author had the most books on the best seller list in the 1990’s. Before we can answer these questions, we need to create a linked list data structure for storing BestSeller objects. Detailed requirements for this project are given below.
+
+
+
+Step 1 – Convert your BestSeller Class into a BestSellerNode Class
+
+Your BestSeller class from the previous project included private variables for the following:
+
+•	Year – An integer value between 1931 and 2020.
+•	Week – A string containing the week on the NYT best sellers in YYYY-MM-DD format.
+•	Rank – An integer representing the position of the book on the best sellers list.
+•	Title_ID – An integer which is the NYT internal identifier for a book.
+•	Title – A string containing the title of the book (in capital letters).
+•	Author – A string containing the author of the book (sometimes multiple authors).
+
+To turn this into a BestSellerNode class, add a private variable called “Next” that is a pointer to a BestSellerNode object. The class constructor methods should initialize this private variable to NULL or a specified value. You should also add get/set methods for this private variable. There is no need to modify the “read” or “print” methods since a pointer variable is a memory address.
+
+Step 2 – Create a BestSellerList Class
+
+Create a BestSellerList class with the following information as private variables:
+
+•	Head – A pointer to first node in the BestSeller linked list.
+•	Tail – A pointer to last node in the BestSeller linked list.
+•	Count – The number of nodes stored in the BestSeller linked list.
+
+Your BestSellerList class should implement the following linked list operations:
+
+•	Constructor – Create an empty linked list.
+•	Destructor – Delete all nodes in the linked list.
+•	InsertHead – To insert a BestSeller node at the Head of the linked list.
+•	InsertTail – To insert a BestSeller node at the Tail of the linked list.
+•	AuthorInsert – To insert a BestSeller node into the list in sorted order according to Author.
+•	TitleInsert – To insert a BestSeller node into the list in sorted order according to Title.
+•	Print – Print all of the BestSeller nodes starting at the Head and going to Tail.
+
+The easiest way to test and debug your BestSellerList class is to write a function in your main program where you “hard code” a sequence of method calls to verify that the linked list is being created properly with each of the four insert methods above. Experiment to see what happens if you use two different methods to insert data into a linked list, and discuss this in your report.
+
+Midpoint Upload
+
+When you have at least two of the BestSellerList insert methods working properly, upload your source code for the BestSellerNode and BestSellerList classes and your main program into Blackboard as your “midpoint” project upload. You do not need to include a midpoint project report.
+
+Step 3 – Answering Questions about BestSellers
+
+Extend your BestSellerList class to add four methods to answer questions about books on the NYT best seller list. The first two methods are the same as your previous programming project. The second two methods will answer the questions mentioned in the introduction.
+
+•	FindTitle – This method should loop over the BestSellerList and print all of the best seller records that match the specified title. For example, if you search for “THE HOBBIT” you will find this book was on the NYT best seller list for two weeks in 1977. Note all titles are in upper case.
+
+•	FindAuthor – This method should loop over the BestSellerList and print all of the best seller records that match the specified author. For example, if you search for “J. K. Rowling” you will find that her books were on the best sellers list almost 200 times.
+
+•	MostPopularBook – This method loops over a BestSellerList that is in sorted order according to book title and counts how many times each title appears in the best sellers list. The method should then calculate which title was the most popular (largest count) and print the title and count to the screen. This method may produce incorrect results if the list is not sorted by title.
+
+•	MostProlificAuthor – This method loops over a BestSellerList that is in sorted order according to book author and counts how many times each author appears in the best sellers list. The method should then calculate which author was the most prolific (largest count) and print the author and count to the screen. This method may produce incorrect results if the list is not sorted by author.
+
+To test the four class methods above you will need to open one of the NYT best sellers files, and loop over this file to read and insert best seller information into a BestSellerList. Then you can call these methods above several times with “hard coded” parameters to demonstrate that your program is answering these four questions properly. Students are not required to create an interactive interface for users to enter any sequence of questions.
+
+2. Design:
+
+For this assignment, you have several important design decisions. First, you must design the BestSellerNode class and BestSellerList, choosing names and data types of private variables, and deciding how to implement class methods.
+
+Second, you need to work out how to open the NYT best seller file and read the six pieces of information from the file and insert this into your BestSellerList. As you are doing this, you may want to start with a file containing only the first 100 lines from the “nyt_best_sellers.tsv” file.
+
+Finally, you need to work out the logic for processing the information in the BestSellerList to answer the four questions described above. You should probably start with any of the two “find” methods, and once you have that working, you can work on the logic to complete the other two methods.
+
+3. Implementation:
+
+You are starting this programming project with your code from the previous project and all of the nine samples of linked list code on the course website. There is a README file on the website that explains which methods are demonstrated in each sample program. You may need to borrow/adapt code from several sample programs to complete this project.
+
+As you design and implement each of the methods listed above it is important to do so incrementally one method at a time, writing comments, adding code, compiling, and debugging. This way, you always have a program that "does something" even if it is not complete.
+
+4. Testing:
+
+Test your program to check that it operates correctly for all of the requirements listed above. See what happens if the user does not follow your instructions, or if they type invalid data. Try your program with several input values, and save your testing output in text files or as screen shots for inclusion in your project report.
+
+5. Documentation:
+
+When you have completed your program, write a short report using the “Programming Project Report Template” describing what the objectives were, what you did, and the status of the program. Does it work properly for all test cases? Are there any known problems? Save this project report in a separate document to be submitted electronically.
+
+6. Project Submission:
+
+In this class, we will be using electronic project submission to make sure that all students hand their programming projects and labs on time, and to perform automatic plagiarism analysis of all programs that are submitted.
+
+When you have completed the tasks above go to Blackboard to upload your documentation as a docx or pdf file, and all of your C++ program files. You do not need to upload your input files.
+
+The dates on your electronic submission will be used to verify that you met the due date above. All late projects will receive reduced credit:
+
+10% off if less than 1 day late,
+20% off if less than 2 days late,
+30% off if less than 3 days late,
+no credit if more than 3 days late.
+
+You will receive partial credit for all programs that compile even if they do not meet all program requirements, so handing projects in on time is highly recommended.
+
+
+
+7. Academic Honesty Statement:
+
+Students are expected to submit their own work on all programming projects, unless group projects have been explicitly assigned. Students are NOT allowed to distribute code to each other, or copy code from another individual or website. Students ARE allowed to use any materials on the class website, or in the textbook, or ask the instructor and/or GTAs for assistance.
+
+This course will be using highly effective program comparison software to calculate the similarity of all programs to each other, and to homework assignments from previous semesters. Please do not be tempted to plagiarize from another student.
+
+Violations of the policies above will be reported to the Provost's office and may result in a ZERO on the programming project, an F in the class, or suspension from the university, depending on the severity of the violation and any history of prior violations.
